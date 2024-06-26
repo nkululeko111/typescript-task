@@ -34,15 +34,14 @@ class Robot {
 }
 
 
-const myRobot = new Robot(TrafficLight.Red);
-console.log(`Current light: ${TrafficLight[myRobot.getCurrentLight()]}`);
-myRobot.changeLightAfterDelay(TrafficLight.Green, 5000); 
+console.log(`Current light: ${TrafficLight[new Robot(TrafficLight.Red).getCurrentLight()]}`);
+new Robot(TrafficLight.Red).changeLightAfterDelay(TrafficLight.Green, 5000); 
 
 console.log(`Light changing to Green in 5 seconds...`);
 
 
 setTimeout(() => {
-    console.log(`Current light after delay: ${TrafficLight[myRobot.getCurrentLight()]}`);
+    console.log(`Current light after delay: ${TrafficLight[new Robot(TrafficLight.Red).getCurrentLight()]}`);
 }, 6000); 
 
 
